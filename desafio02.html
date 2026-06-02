@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-icons/bootstrap-icons/bootstrap-icons.css" integrity="sha384-..." crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #ffd79a;
+            color: antiquewhite;
+        }
+
+        .bloco {
+            background-color: #bc0000;
+            padding: 20px;
+            border: 1px solid #ffd79a;
+            border-radius: 10px;
+        }
+
+
+        .menu-principal {
+            background-color: #ffd79a;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .menu-principal ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .menu-principal a {
+            color: #bc0000;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.8rem;
+            gap: 4px;
+        }
+
+
+        .menu-principal a span {
+            font-size: 0.75rem;
+        }
+
+  
+        .logo { display: none; }
+        .meio4 {display: none;}
+  
+        .menu-principal i {
+            font-size: 1.4rem;
+            color: #bc0000; 
+        }
+
+
+        .grid-container {
+            display: grid;
+            gap: 10px;
+            padding: 10px;
+            grid-template-areas: 
+                "topo"
+                "meio1"
+                "meio2"
+                "meio3"
+                "final";
+        }
+
+  
+        .menu-principal {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            border-top: 2px solid #bc0000;
+        }
+
+  
+        .top   { grid-area: topo; }
+        .meio1 { grid-area: meio1; }
+        .meio2 { grid-area: meio2; }
+        .meio3 { grid-area: meio3; }
+        .meio4 { grid-area: meio4; }
+        .final { grid-area: final; }
+
+  
+        @media (min-width: 768px) { 
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-areas: 
+                    "menu   menu   menu   menu" 
+                    "topo   topo   topo   topo"
+                    "meio1 meio4  meio2  meio3"
+                    "final  final  final  final";
+                padding: 20px;
+                gap: 15px;
+            }
+
+
+            .menu-principal {
+                grid-area: menu;
+                position: static; 
+                height: 70px;
+                padding: 0 40px;
+                border-top: none;
+                border-bottom: 2px solid #bc0000;
+            }
+
+            .menu-principal ul {
+                width: auto;
+                gap: 30px;
+            }
+
+  
+            .menu-principal a {
+                flex-direction: row;
+                font-size: 1rem;
+                gap: 8px;
+            }
+
+   
+            .logo {
+                display: block;
+                font-weight: bold;
+                font-size: 1.5rem;
+                color: #bc0000;
+            }
+            .meio4{
+                display: block;
+            }
+        }
+
+
+        .img-fluid {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="menu-principal">
+        <div class="logo">BBB</div>
+        <ul>
+            <li><a href="#home"><i class="bi bi-house-door"></i><span>Home</span></a></li>
+            <li><a href="#cardapio"><i class="bi bi-file-earmark-text"></i><span>Cardápio</span></a></li>
+            <li><a href="#contato"><i class="bi bi-instagram"></i><span>Pedir</span></a></li>
+            <li><a href="#sobre"><i class="bi bi-info-circle"></i><span>Sobre</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="grid-container">
+        <div class="top bloco">
+            <img src="img/banner.png" class="img-fluid" alt="Hambúrguer">
+        </div>
+        
+        <div id="sobre" class="meio1 bloco">
+            <h3>Eventos</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <img src="img/eventos.png" width="400" height="400">
+        </div>
+        
+        <div id="cardapio" class="meio2 bloco">
+            <h3>Lanches e Porções</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nosso cardápio conta com os melhores blends artesanais da região.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nosso cardápio conta com os melhores blends artesanais da região.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nosso cardápio conta com os melhores blends artesanais da região.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nosso cardápio conta com os melhores blends artesanais da região.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nosso cardápio conta com os melhores blends artesanais da região.
+            </p>
+        </div>
+        
+        <div class="meio3 bloco">
+            <h3>Nossos Espaços</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nosso cardápio conta com os melhores blends artesanais da região.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nosso cardápio conta com os melhores blends artesanais da região.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nosso cardápio conta com os melhores blends artesanais da região.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nosso cardápio conta com os melhores blends artesanais da região.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nosso cardápio conta com os melhores blends artesanais da região.
+            </p>
+        </div>
+        
+        <div class="meio4 bloco">
+            <h3>Localização</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2598.9532342265716!2d-49.62067706123154!3d-22.8958477091571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c06a2e6b36a937%3A0xbb39194575187659!2sBol%C3%A3o%20Big%20Burger!5e0!3m2!1spt-BR!2sbr!4v1780407919003!5m2!1spt-BR!2sbr" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div id="contato" class="final bloco">
+            <p>Funcionamento: Terça a Domingo, das 18h às 23h. Av. Principal, 123.</p>
+        </div>
+    </main>
+
+</body>
+</html>
