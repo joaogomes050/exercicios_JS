@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio 03</title>
      <script>
-
+        var nome = prompt('Qual o seu nome?');
+        var salario = parseInt( prompt('Qual é o seu salário?'));
+        var venda = parseInt(prompt('Qual sua venda?'));
+        var comissao = 0;
     </script>
 </head>
 <body>
     <script>
-              var nome = prompt('Qual o seu nome?');
-        var salario = parseInt(('Qual é o seu salário?'));
-        var venda = parseInt(('Qual sua venda?'));
-        var comissao = 0;
-
-        comissao = vendas * 0.025;
+        comissao = venda * 0.025;
         salario = salario + comissao;
-        document.write('Olá ' + nome + ' seu salário desse mês será de ' + salario + '<br/>');
+
+        document.write('<h1>Olá ' + nome + ' seu salário desse mês será de ' + salario + '</h1>');
     </script>
+    
 </body>
 </html>
