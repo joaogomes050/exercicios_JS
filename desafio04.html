@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF e ELSE</title>
+    <script>
+        var nome = prompt('Digite seu nome:')
+        var classe = prompt('Digite sua classe:')
+        var venda = Number(prompt('Digite sua venda:'))
+
+        if(classe == '1'){
+          var salario = 1500.00
+          var comissao = 0.025
+          var total = salario + (comissao * venda)
+          document.write(' Vai receber esse mês: R$' + total + ' !')
+
+        } else if(classe == '2'){
+          var salario = 2000.00
+          var comissao = 0.03
+          var total = salario + (comissao * venda)
+          document.write(' Vai receber esse mês: R$' + total + ' !')
+
+        } else if(classe == '3'){
+          var salario = 2500.00
+          var comissao = 0.035
+          var total = salario + (comissao * venda)
+          document.write(' Vai receber esse mês: R$' + total + ' !')
+
+        }
+    
+       
+    </script>
+</head>
+<body>
+<script>
+    
+</script>
+</body>
+</html>
