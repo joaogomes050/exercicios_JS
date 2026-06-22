@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switich</title>
+    <script>
+
+        var dias = prompt('Digite os dias:'); 
+
+        switch(dias){
+            case '28':
+                document.write('Fevereiro');
+                break
+            case '29':
+                document.write('Fevereiro, pois é ano bissexto');
+                break
+            case '30':
+                document.write('Abril, Junho, Setembro e Novembro');
+                break
+            case '31':
+                document.write('Janeiro, Março, Maio, Julho, Agosto, Outubro e Dezembro.');
+                break
+            default:
+                document.write('Não encontrado!');
+                
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
