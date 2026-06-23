@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNÇÃO</title>
+    <script>
+       // var frase = prompt('Digite sua frase:');
+       // frase = frase.toLocaleUpperCase();
+        //document.write(frase);
+
+        var km = Number(prompt('Digite o KM percorrido:'));
+        var litros = Number(prompt('Digite quantos litros foi gasto:'));
+
+        function calcularMedia(a,b){
+            var media = a / b;
+            return media;
+        }
+
+        var result = calcularMedia(km, litros);
+        document.write(Math.round(result));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
