@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANIPULAÇÃO DE DOM</title>
+</head>
+
+<body>
+    <!--    
+
+    MANIPULAÇÃO DE DOM = ID
+
+    <input type="text" id="banana" placeholder="Fruta" name="fruta">
+        
+    <script>
+        console.log(document.getElementById('banana'));
+    </script>
+
+-->
+
+    <!--
+
+    MANIPULAÇÃO DE DOM = NOME
+
+    <input type="text" id="banana" placeholder="Fruta" name="banana">
+    <br>
+    <input type="text" id="maça" placeholder="Fruta" name="maça">
+
+    <script>
+        console.log(document.getElementsByName('banana'));
+        console.log(document.getElementsByName('maça'));
+    </script>
+
+-->
+
+<!--
+
+    MANIPULAÇÃO DE DOM = TAGNAME
+
+    <input type="text" id="banana" placeholder="Fruta" name="banana">
+    <br>
+    <input type="text" id="maça" placeholder="Fruta" name="maça">
+
+    <script>
+        console.log(document.getElementsByTagName('input'));
+    </script>
+
+-->
+<!-- 
+
+    MANIPULAÇÃO DE DOM = CLASSE
+
+    <input type="text" class="fruta" id="banana" placeholder="Fruta" name="banana">
+    <br>
+    <input type="text" class="verdura" id="maça" placeholder="Fruta" name="alface">
+
+    <script>
+        console.log(document.getElementsByClassName('fruta'));
+    </script>
+-->
+
+
+MANIPULAÇÃO DE DOM + EVENTOS = PEGA O VALOR E DIRECIONA PARA O CONSOLE
+
+<input type="text" id="entrada" onkeyup="mostrarValor()">
+
+<script>
+    function mostrarValor(){
+    var texto = document.getElementById('entrada').value;
+    console.log(texto)
+    }
+</script>
+
+-->
+
+''
+
+PEGA O VALOR E DIRECIONA EM UM ELEMENTO PARA O USUÁRIO VER
+
+<input type="text" id="entrada" onkeyup="mostrarValor()">
+<input type="text" id="saida" disabled="disabled">
+<script>
+    function mostrarValor(){
+    var texto = document.getElementById('entrada').value;
+    document.getElementById('saida').value = texto;
+    }
+</script>
+</body>
+
+</html>
