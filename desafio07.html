@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema de carrinho de Compras</h1>
+    <h3>Fruta: <input type="text" id="entrada" placeholder="Ex: Maça"></h3>
+    <h3>Quantidade: <input type="text" placeholder="Ex: 5"></h3>
+    <h3>Valor Unitário: <input type="text" placeholder="Ex: 2,70"></h3>
+
+    <button onclick="adicionarFruta()" >Adicionar ao Carrinho</button>
+
+    <h2>Resumo do Carrinho</h2>
+    <input type="text" id="saida" placeholder="Seu Carrinho está Vazio..." >
+
+    <script>
+        var lista = []
+        var total = quantidade * valor
+        var quantidade = document.getElementById("quantidade").value;
+        var valor = document.getElementById("valor").value;
+        function adicionarFruta(){
+            var fru = document.getElementById('entrada').value;
+            lista.unshift(fru);
+            document.getElementById('saida').value = lista;
+            document.getElementById('entrada').value = null;
+        }
+
+    </script>
+</body>
+</html>

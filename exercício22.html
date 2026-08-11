@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var aluno = []
+        aluno [0] = [10,8,2]
+        aluno [1] = [8,9,10]
+        aluno [2] = [3,10,2]
+
+        var media = 0
+        var soma = 0 
+
+        for(var i = 0; i < 3; i++){
+            for(var j = 0; j < 2; j++){
+                soma += aluno[i][j];
+            } 
+        }
+        media = soma / 6
+        alert(media.toFixed(2))
+    </script>
+</body>
+</html>
