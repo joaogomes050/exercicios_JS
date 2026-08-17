@@ -1,33 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Sistema de carrinho de Compras</h1>
-    <h3>Fruta: <input type="text" id="entrada" placeholder="Ex: Maça"></h3>
-    <h3>Quantidade: <input type="text" placeholder="Ex: 5"></h3>
-    <h3>Valor Unitário: <input type="text" placeholder="Ex: 2,70"></h3>
-
-    <button onclick="adicionarFruta()" >Adicionar ao Carrinho</button>
-
-    <h2>Resumo do Carrinho</h2>
-    <input type="text" id="saida" placeholder="Seu Carrinho está Vazio..." >
-
-    <script>
-        var lista = []
-        var total = quantidade * valor
-        var quantidade = document.getElementById("quantidade").value;
-        var valor = document.getElementById("valor").value;
-        function adicionarFruta(){
-            var fru = document.getElementById('entrada').value;
-            lista.unshift(fru);
-            document.getElementById('saida').value = lista;
-            document.getElementById('entrada').value = null;
+    <title>Sistema de Carrinho de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 30px auto;
+            color: #222;
         }
 
+        h1 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 6px 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 14px;
+            background: #f0f0f0;
+            border: 1px solid #999;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            box-sizing: border-box;
+            margin-top: 8px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sistema de Carrinho de Compras</h1>
+
+    <label for="fruta">Fruta:</label>
+    <input type="text" id="fruta" placeholder="Ex: Maçã">
+
+    <label for="quantidade">Quantidade:</label>
+    <input type="text" id="quantidade" placeholder="Ex: 5">
+
+    <label for="valorUnitario">Valor Unitário:</label>
+    <input type="text" id="valorUnitario" placeholder="Ex: 2.50">
+
+    <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+
+    <h2>Resumo do Carrinho:</h2>
+    <textarea id="resumoCarrinho" readonly>Seu carrinho está vazio...</textarea>
+
+    <script>
+        // Três listas separadas, uma para cada informação
+        // (a posição "i" em cada lista pertence ao mesmo item)
+        var listaFrutas = [];
+        var listaQuantidades = [];
+        var listaValores = [];
+
+        function adicionarAoCarrinho() {
+
+            // Pega o que foi digitado
+            var fruta = document.getElementById("fruta").value;
+            var quantidade = parseFloat(document.getElementById("quantidade").value);
+            var valorUnitario = parseFloat(document.getElementById("valorUnitario").value);
+
+            // Verifica se está tudo certo antes de adicionar
+            if (fruta == "" || isNaN(quantidade) || isNaN(valorUnitario)) {
+                alert("Preencha todos os campos corretamente!");
+                return;
+            }
+
+            // Guarda cada valor na sua lista
+            listaFrutas.push(fruta);
+            listaQuantidades.push(quantidade);
+            listaValores.push(valorUnitario);
+
+            // Limpa os campos
+            document.getElementById("fruta").value = "";
+            document.getElementById("quantidade").value = "";
+            document.getElementById("valorUnitario").value = "";
+
+            // Mostra o carrinho atualizado
+            mostrarCarrinho();
+        }
+
+        function mostrarCarrinho() {
+
+            // Se não tem nenhum item, mostra a mensagem padrão
+            if (listaFrutas.length == 0) {
+                document.getElementById("resumoCarrinho").value = "Seu carrinho está vazio...";
+                return;
+            }
+
+            var texto = "";
+            var total = 0;
+
+            // Passa por cada posição das listas, uma de cada vez
+            for (var i = 0; i < listaFrutas.length; i++) {
+
+                // A conta principal: quantidade vezes valor unitário
+                var subtotal = listaQuantidades[i] * listaValores[i];
+
+                texto = texto + listaFrutas[i] + " | Qtd: " + listaQuantidades[i] +
+                    " | Unitário: " + listaValores[i] +
+                    " | Subtotal: " + subtotal + "\n";
+
+                total = total + subtotal;
+            }
+
+            texto = texto + "\nTotal geral: " + total;
+
+            document.getElementById("resumoCarrinho").value = texto;
+        }
     </script>
+
 </body>
+
 </html>
